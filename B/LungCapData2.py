@@ -6,7 +6,6 @@ from mpl_toolkits.mplot3d import Axes3D
 from pandasql import sqldf
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import cm
 import seaborn as sns
 import numpy as np
 
@@ -30,7 +29,7 @@ Y = sqldf("""
 x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
 # MEAN SQUARE ERROR, 평균 제곱 오차
-reg = SVR(C=10, epsilon=0.2, kernel="precompu`ted")
+reg = SVR(C=10, epsilon=0.2, kernel="precomputed")
 reg.fit(x_train, np.ravel(y_train))
 
 y_pred = reg.predict(x_test)
